@@ -7,7 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:gravity="center"
     tools:context="com.example.shawnocked.csproject2.MainActivity">
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/people_machine"/>
+
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="wrap_content"
@@ -22,14 +31,15 @@
             android:background="@color/lightGray"
             android:id="@+id/z_accel_view"
             android:layout_marginBottom="15sp"
-
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/default_text_size"
+            android:textColor="@color/hotPink"
             android:text="@string/z"
+            android:layout_alignRight="@+id/z_accel_view"
             />
     </LinearLayout>
 
@@ -40,7 +50,7 @@
         android:layout_below="@id/linear1"
         android:gravity="center">
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="@dimen/accel_value_width"
             android:layout_height="wrap_content"
             android:textSize="48sp"
             android:paddingRight="20dp"
@@ -52,7 +62,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="48sp"
-            android:text="@string/x"/>
+            android:text="@string/x"
+            android:textColor="@color/red"
+            android:layout_alignRight="@+id/x_accel_view"
+            />
 
     </LinearLayout>
 
@@ -63,31 +76,33 @@
         android:layout_below="@id/linear2"
         android:gravity="center">
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="@dimen/accel_value_width"
             android:layout_height="wrap_content"
             android:textSize="48sp"
             android:paddingRight="20dp"
             android:background="@color/lightBlue"
             android:id="@+id/y_accel_view"
-            android:layout_marginBottom="15sp"
+            android:layout_marginBottom="45sp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="48sp"
-            android:text="@string/y"/>
+            android:text="@string/y"
+            android:textColor="@color/lightBlue"
+            android:layout_alignRight="@+id/y_accel_view"
+            />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear4"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linear3"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_below="@+id/linear3">
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="48sp"
             android:paddingRight="20dp"
@@ -99,30 +114,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="28sp"
-            android:text="Lon"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linear4"
-        android:gravity="center">
+            android:text="Lon"
+            android:layout_marginLeft="15sp"
+            android:layout_alignRight="@+id/lon_location_view"/>
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="48sp"
             android:paddingRight="20dp"
             android:background="@color/darkGreen"
             android:id="@+id/lat_location_view"
+            android:layout_below="@+id/lon_location_view"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="28sp"
-            android:text="Lat"/>
+            android:text="Lat"
+            android:layout_marginLeft="15sp"
+            android:layout_alignRight="@+id/lat_location_view"
+            android:layout_below="@+id/lon_location_view"/>
 
-    </LinearLayout>
+    </RelativeLayout>
+
 </RelativeLayout>

@@ -20,8 +20,7 @@ public class AccelerometerHandler extends Observable
     private long prev_time = 0;
     public final static long ONE_SEC_IN_MILLIS = 1000;
 
-    public AccelerometerHandler(int threshold, Activity act) {
-        THRESHOLD = threshold;
+    public AccelerometerHandler(MainActivity act) {
         this.prev_time = System.currentTimeMillis();
         this.sensorManager = (SensorManager)
                 act.getSystemService(Activity.SENSOR_SERVICE);
@@ -43,6 +42,7 @@ public class AccelerometerHandler extends Observable
             notifyObservers(sensorEvent.values);
         }
     }
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) { }

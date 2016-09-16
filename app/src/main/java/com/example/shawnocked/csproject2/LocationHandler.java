@@ -56,6 +56,10 @@ public class LocationHandler extends Observable
 
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {
 
